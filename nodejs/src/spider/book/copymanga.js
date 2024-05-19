@@ -98,7 +98,7 @@ async function category(inReq, _outResp) {
     }
     var html = await request(link);
     const $ = load(html);
-    const list = eval($('div[class="row exemptComic-box"]')[0].attribs.list);
+    const list = (0, eval)($('div[class="row exemptComic-box"]')[0].attribs.list);
     let books = [];
     for (const book of list) {
         books.push({
